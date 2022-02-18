@@ -15,7 +15,7 @@ resource "aws_amplify_app" "portfolio" {
   access_token = var.git_token
 }
 
-resource "aws_amplif_branch" "master" {
+resource "aws_amplify_branch" "master" {
   app_id = aws_amplify_app.portfolio.id
   branch_name = "master"
 
