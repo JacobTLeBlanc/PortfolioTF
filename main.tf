@@ -68,3 +68,7 @@ resource "aws_amplify_branch" "master" {
   stage = "PRODUCTION"
 }
 
+resource "aws_amplify_domain_association" "main_domain" {
+  app_id = aws_amplify_app.portfolio.id
+  name = aws_route53_zone.primary.name
+}
