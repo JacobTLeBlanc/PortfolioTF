@@ -77,5 +77,5 @@ resource "aws_amplify_domain_association" "main_domain" {
     prefix      = "www"
   }
 
-  certificate_verification_dns_record = aws_route53_record.validation.id
+  certificate_verification_dns_record = [for record in aws_route53_record.validation : record.id]
 }
