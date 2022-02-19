@@ -16,7 +16,7 @@ data "aws_iam_policy_document" "assume_role_amplify_policy" {
 
     principals {
       type        = "Service"
-      identifiers = ["amplify.amazonaws.com", "amplify.${var.region}.amazonaws.com"]
+      identifiers = ["amplify.amazonaws.com"]
     }
   }
 }
