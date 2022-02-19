@@ -60,6 +60,12 @@ resource "aws_amplify_app" "portfolio" {
   iam_service_role_arn = aws_iam_role.amplify_role.arn
 
   custom_rule {
+    source = "/<*>"
+    status = "404"
+    target = "/index.html"
+  }
+
+  custom_rule {
     source = var.domain
     status = "302"
     target = "www.${var.domain}"
