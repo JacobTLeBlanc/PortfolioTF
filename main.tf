@@ -74,6 +74,11 @@ resource "aws_amplify_domain_association" "main_domain" {
 
   sub_domain {
     branch_name = aws_amplify_branch.master.branch_name
+    prefix      = ""
+  }
+
+  sub_domain {
+    branch_name = aws_amplify_branch.master.branch_name
     prefix      = "www"
   }
 }
