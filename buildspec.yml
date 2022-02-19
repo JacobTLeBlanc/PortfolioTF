@@ -1,21 +1,16 @@
-version: 0.2
-
+version: 1
 frontend:
   phases:
-    install:
-      runtime-versions:
-        nodejs: 12
-
+    preBuild:
       commands:
-        - npm install
-
+        - npm ci
     build:
       commands:
-        - npm run build
-
+        - node ./node_modules/webpack/bin/webpack.js
   artifacts:
+    baseDirectory: /dist
     files:
-      - src/*
-      - package.json
-      - index.js
-      - webpack.config.js
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
