@@ -63,4 +63,5 @@ resource "aws_amplify_branch" "master" {
   branch_name = "master"
 
   framework = "React"
+  stage = "PRODUCTION"
 }
