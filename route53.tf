@@ -34,7 +34,5 @@ resource "aws_acm_certificate_validation" "default" {
   provider = aws
   certificate_arn = aws_acm_certificate.default.arn
 
-  validation_record_fqdns = [
-    [for record in aws_route53_record.validation : record.fqdn]
-  ]
+  validation_record_fqdns = [for record in aws_route53_record.validation : record.fqdn]
 }
