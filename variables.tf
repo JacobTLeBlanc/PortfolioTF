@@ -6,5 +6,5 @@ variable "region" {
 
 variable "git_token" {
   type        = string
-  description = "GIT Token to authenticate API calls"
+  description = "GIT personal access token"
 }
