@@ -58,6 +58,12 @@ resource "aws_amplify_app" "portfolio" {
 
   access_token = var.git_token
   iam_service_role_arn = aws_iam_role.amplify_role.arn
+
+  custom_rule {
+    source = var.domain
+    status = "302"
+    target = "www.${var.domain}"
+  }
 }
 
 resource "aws_amplify_branch" "master" {
