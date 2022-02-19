@@ -8,3 +8,8 @@ variable "git_token" {
   type        = string
   description = "GIT personal access token"
 }
+
+variable "domain" {
+  type = string
+  default = "jacobtleblanc.portfolio.com"
+}
