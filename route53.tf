@@ -1,5 +1,5 @@
 resource "aws_acm_certificate" "default" {
-  provider = "aws.acm"
+  provider = aws
   domain_name = "${var.domain}"
   subject_alternative_names = ["*.${var.domain}"]
   validation_method = "DNS"
@@ -24,7 +24,7 @@ resource "aws_route53_record" "validation" {
 }
 
 resource "aws_acm_certificate_validation" "default" {
-  provider = "aws.acm"
+  provider = aws
   certificate_arn = aws_acm_certificate.default.arn
 
   validation_record_fqdns = [
