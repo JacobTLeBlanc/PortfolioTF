@@ -8,7 +8,7 @@ data "local_file" "buildspec_local" {
 
 data "aws_iam_policy_document" "assume_role_amplify_policy" {
   statement {
-    sid = "lambdaAssumeRolePolicy"
+    sid = "AmplifyAssumeRolePolicy"
 
     actions = ["sts:AssumeRole"]
 
@@ -22,7 +22,7 @@ data "aws_iam_policy_document" "assume_role_amplify_policy" {
 }
 
 resource "aws_iam_role" "amplify_role" {
-  name = "GetReposRole"
+  name = "AmplifyRole"
 
   assume_role_policy = data.aws_iam_policy_document.assume_role_amplify_policy.json
 }
