@@ -11,5 +11,5 @@ variable "git_token" {
 
 variable "domain" {
   type = string
-  default = "jacobtleblanc.portfolio.com"
+  default = "jacobtleblanc.com"
 }
