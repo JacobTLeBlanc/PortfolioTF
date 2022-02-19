@@ -21,6 +21,27 @@ data "aws_iam_policy_document" "assume_role_amplify_policy" {
   }
 }
 
+data "aws_iam_policy_document" "portfolio_policy_document" {
+  statement {
+    sid = "PortfolioPolicy"
+
+    effect = "Allow"
+
+    actions = [
+      "amplify:*"
+    ]
+
+    resources = [
+      "*"
+    ]
+  }
+}
+
+resource "aws_iam_role_policy" "portfolio_role_policy" {
+  policy = data.aws_iam_policy_document.portfolio_policy_document.json
+  role   = aws_iam_role.amplify_role.id
+}
+
 resource "aws_iam_role" "amplify_role" {
   name = "AmplifyRole"
 
