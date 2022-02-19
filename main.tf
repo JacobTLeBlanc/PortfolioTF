@@ -68,14 +68,12 @@ resource "aws_amplify_branch" "master" {
   stage = "PRODUCTION"
 }
 
-resource "aws_amplify_domain_association" "main_domain" {
-  app_id = aws_amplify_app.portfolio.id
-  domain_name = aws_route53_zone.primary.name
-
-  sub_domain {
-    branch_name = aws_amplify_branch.master.branch_name
-    prefix      = "www"
-  }
-
-  certificate_verification_dns_record = [for record in aws_route53_record.validation : record.id]
-}
+//resource "aws_amplify_domain_association" "main_domain" {
+//  app_id = aws_amplify_app.portfolio.id
+//  domain_name = aws_route53_zone.primary.name
+//
+//  sub_domain {
+//    branch_name = aws_amplify_branch.master.branch_name
+//    prefix      = "www"
+//  }
+//}
