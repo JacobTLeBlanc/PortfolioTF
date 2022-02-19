@@ -76,4 +76,6 @@ resource "aws_amplify_domain_association" "main_domain" {
     branch_name = aws_amplify_branch.master.branch_name
     prefix      = "www"
   }
+
+  certificate_verification_dns_record = aws_route53_record.validation.id
 }
