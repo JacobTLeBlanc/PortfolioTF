@@ -28,7 +28,9 @@ data "aws_iam_policy_document" "portfolio_policy_document" {
     effect = "Allow"
 
     actions = [
-      "amplify:*"
+      "amplify:*",
+      "secretsmanager:*",
+      "kms:*"
     ]
 
     resources = [
