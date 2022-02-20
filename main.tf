@@ -64,12 +64,6 @@ resource "aws_amplify_app" "portfolio" {
     status = "404"
     target = "/index.html"
   }
-
-  custom_rule {
-    source = var.domain
-    status = "302"
-    target = "www.${var.domain}"
-  }
 }
 
 resource "aws_amplify_branch" "master" {
